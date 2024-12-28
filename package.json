@@ -1,0 +1,27 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/seo": "^2.0.2",
+    "@vee-validate/nuxt": "^4.14.7",
+    "@vee-validate/yup": "^4.15.0",
+    "nuxt": "^3.14.1592",
+    "nuxt-mail": "^5.1.1",
+    "vue": "latest",
+    "vue-router": "latest",
+    "vuetify-nuxt-module": "^0.18.3",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@unlighthouse/nuxt": "^0.10.6",
+    "sass-embedded": "^1.83.0"
+  }
+}

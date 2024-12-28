@@ -1,0 +1,83 @@
+a:hover{
+    text-decoration: underline !important;
+}
+.v-parallax h4{
+    font-size: 1.6rem !important;
+}
+.text-h6 {
+    font-weight: 700;
+    line-height: 1.75;
+    letter-spacing: 0.0125em !important;
+    font-family: "lato", sans-serif;
+    text-transform: none !important;
+}
+.text-h1 {
+    font-size: 5.5rem !important;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.00938em !important;
+    font-family: "lato", sans-serif;
+    text-transform: none !important;
+}
+.v-timeline-divider .v-timeline-divider__dot--size-default{
+    height: 70px;
+    width: 70px;
+}
+.text-h6{
+    font-size: 1.1rem !important;
+    font-weight: 500;
+}
+.v-card-item.text-h5{
+    font-size: 1.25rem !important;
+    font-weight: 700;
+}
+span.v-chip {
+    //color: #272822;
+    font-family: Courier Prime, monospace;
+}
+.skills-p{
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+.zoom {
+    transition: transform .2s;}
+
+.projects-grid .v-img{
+    transition: all 0.2s;
+    }
+.v-chip-group .v-chip.v-theme--myCustomTheme{
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px 0 #00000024, 0 1px 5px 0 #0000001f !important;
+      }
+      .v-chip.v-chip--size-default{
+        line-height: 1.1 !important;
+      }
+.projects-grid .v-img:hover  {
+    transform: scale(1.05);
+      }
+@media screen and (max-width: 768px) {
+    .text-h1 {
+        font-size: 4em !important;
+        text-align: left;
+        }
+    }
+      @media screen and (max-width: 768px) {
+        .skills-p {
+            padding: 5% !important;
+        }
+    }
+@media (min-width: 960px) {
+    .v-container.skills-p {
+        max-width: none;
+    }
+}
+@media screen and (max-width: 700px) {
+    .projects-container .projects-grid {
+        display: block;
+    }
+}
+@media screen and (max-width: 1279px) {
+    .v-timeline {
+        grid-template-columns: 0  min-content auto !important;
+        height: auto !important;
+    }
+}
