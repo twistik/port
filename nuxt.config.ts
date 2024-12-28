@@ -14,6 +14,8 @@ export default defineNuxtConfig({
   modules: ['vuetify-nuxt-module', '@vee-validate/nuxt', ['nuxt-mail', {
     message: {
       to: process.env.NUXT_MAIL_TARGET,
+      cc: process.env.NUXT_MAIL_TARGET,
+      bcc: process.env.NUXT_MAIL_TARGET,
     },
     smtp: {
       host: process.env.NUXT_MAIL_SMPT,
