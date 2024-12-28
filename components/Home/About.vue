@@ -1,4 +1,4 @@
-<!--<template>
+<template>
   <v-container class="ma-0 pa-0 mb-10 mt-16 " no-gutters style="min-width: 100% !important;">
     <v-parallax :src="imageSrc" height="700" class="d-flex justify-center align-center bg-surface-variant">
       <v-row class="justify-start align-center" style="padding-left: 15%; padding-right:15%;">
@@ -28,4 +28,4 @@ const theme = useTheme()
 const imageSrc = computed(() => {
   return theme.global.current.value.dark ? bgDark : bgLight
 })
-</script>-->
+</script>
