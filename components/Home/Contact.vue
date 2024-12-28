@@ -48,46 +48,25 @@
     
   
 <script setup>
-import { ref } from 'vue'
 import { useField, useForm } from 'vee-validate';
+import * as yup from 'yup'
 
 const { handleSubmit, handleReset } = useForm({
-  validationSchema: {
-      name (value) {
-        if (value?.length >= 2) return true
-
-        return 'Name needs to be at least 2 characters.'
-      },
-      phone (value) {
-        if (/^[0-9-]{7,}$/.test(value)) return true
-
-        return 'Phone number needs to be at least 7 digits.'
-      },
-      email (value) {
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
-
-        return 'Must be a valid e-mail.'
-      },
-      body (value) {
-        if (value?.length >= 2) return true
-
-        return 'Message needs to be at least 2 characters.'
-      },
-    },
-});
+  validationSchema: yup.object({
+    name: yup.string().min(2, 'Name needs to be at least 2 characters.').required(),
+    phone: yup.string().matches(/^[0-9-]{7,}$/, 'Phone number needs to be at least 7 digits.').required(),
+    email: yup.string().email('Must be a valid e-mail.').required(),
+    body: yup.string().min(2, 'Message needs to be at least 2 characters.').required(),
+  }),
+})
 
 const name = useField('name');
 const phone = useField('phone');
 const email = useField('email');
 const body = useField('body');
-const items = ref([
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-  ])
 
 const toggleSendMail = handleSubmit(async (values) => {
+  
   const mail = useMail();
   try {
     // Send mail

@@ -27,69 +27,39 @@
   </v-navigation-drawer>
 </template>
 
-<script>
-  import { useTheme } from 'vuetify'
-  import { useGoTo } from 'vuetify'
-  export default {
-    setup () {
-      const goTo = useGoTo()
-      const theme = useTheme()
-      return { goTo, theme }
-    },
-    data() {
-    return {
-      drawer: false,
-      buttons: [
-        { value: 'Expertise', icon: 'mdi-atom', text: 'Expertise', action: this.goToSkills },
-        { value: 'History', icon: 'mdi-history', text: 'History', action: this.goToExperience },
-        { value: 'Projects', icon: 'mdi-briefcase', text: 'Projects', action: this.goToProjects },
-        { value: 'Contacts', icon: 'mdi-contacts', text: 'Contacts', action: this.goToContact }
-      ],
-      group: null,
-      offset: -50,
-      duration: 300,
-      number: 500,
-      easing: 'easeInOutCubic',
-    };
-  },
-    computed: {
-      options () {
-        return {
-          duration: this.duration,
-          easing: this.easing,
-          offset: this.offset,
-        }
-      },
-    },
-    methods: {
-      toggleTheme () {
-        this.theme.global.name.value = this.theme.global.current.value.dark ? 'myCustomTheme' : 'dark'
-      },
-        toggleDrawer() {
-        this.drawer = !this.drawer;},  
-        goToSkills () {
-        this.goTo('#skills', this.options)
-        this.drawer = false
-        },
-        goToExperience () {
-        this.goTo('#experience', this.options)
-        this.drawer = false
-        },
-        goToProjects () {
-        this.goTo('#projects', this.options)
-        this.drawer = false
-        },
-        goToContact () {
-        this.goTo('#contact', this.options)
-        this.drawer = false
-        },
-    },
+<script setup>
+import { ref, computed } from 'vue'
+import { useTheme, useDisplay } from 'vuetify'
+import { useGoTo } from 'vuetify'
 
-    watch: {
-      group () {
-        this.drawer = false
-      },
-    },
-  }
+const theme = useTheme()
+const goTo = useGoTo()
+const display = useDisplay()
+
+const drawer = ref(false)
+const buttons = [
+  { value: 'Expertise', icon: 'mdi-atom', text: 'Expertise', action: () => goToSection('#skills') },
+  { value: 'History', icon: 'mdi-history', text: 'History', action: () => goToSection('#experience') },
+  { value: 'Projects', icon: 'mdi-briefcase', text: 'Projects', action: () => goToSection('#projects') },
+  { value: 'Contacts', icon: 'mdi-contacts', text: 'Contacts', action: () => goToSection('#contact') }
+]
+
+const options = computed(() => ({
+  duration: 300,
+  easing: 'easeInOutCubic',
+  offset: -50,
+}))
+
+const toggleTheme = () => {
+  theme.global.name.value = theme.global.current.value.dark ? 'myCustomTheme' : 'dark'
+}
+
+const toggleDrawer = () => {
+  drawer.value = !drawer.value
+}
+
+const goToSection = (section) => {
+  goTo(section, options.value)
+  drawer.value = false
+}
 </script>
-  

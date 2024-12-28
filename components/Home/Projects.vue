@@ -31,43 +31,39 @@
   </v-container>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import project_2 from '@/assets/img/mock09.e18677ccfc932e52d754.png'
 import project_1 from '@/assets/img/mock10.2d05b02ba569a430a255.png'
-export default {
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          title: 'Project 1',
-          description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
-          image: project_1,
-          link: 'https://vuetifyjs.com/en/components/images/#cover'
-        },
-        {
-          id: 2,
-          title: 'Project 2',
-          description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
-          image: project_2,
-          link: 'https://vuetifyjs.com/en/components/images/#cover'
-        },
-        {
-          id: 3,
-          title: 'Project 3',
-          description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
-          image: project_1,
-          link: 'https://vuetifyjs.com/en/components/images/#cover'
-        },
-        {
-          id: 4,
-          title: 'Project 4',
-          description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
-          image: project_1,
-          link: 'https://vuetifyjs.com/en/components/images/#cover'
-        }
-      ]
-    }
+
+const projects = ref([
+  {
+    id: 1,
+    title: 'Project 1',
+    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    image: project_1,
+    link: 'https://vuetifyjs.com/en/components/images/#cover'
+  },
+  {
+    id: 2,
+    title: 'Project 2',
+    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    image: project_2,
+    link: 'https://vuetifyjs.com/en/components/images/#cover'
+  },
+  {
+    id: 3,
+    title: 'Project 3',
+    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    image: project_1,
+    link: 'https://vuetifyjs.com/en/components/images/#cover'
+  },
+  {
+    id: 4,
+    title: 'Project 4',
+    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    image: project_1,
+    link: 'https://vuetifyjs.com/en/components/images/#cover'
   }
-}
+])
 </script>
