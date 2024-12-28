@@ -1,7 +1,6 @@
 <template>
     <NuxtLayout>
         <HomeHeader />
-        <HomeAbout/>
         <HomeSkills/>
         <HomeExperience/>
         <HomeProjects/>
