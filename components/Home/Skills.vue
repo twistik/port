@@ -9,7 +9,7 @@
           <v-card>
             <v-card-item class="text-h5">
               <div class="mb-5">
-                <v-icon size="53">mdi-vuejs</v-icon>
+                <v-icon size="53" class="i-mdi-vuejs"></v-icon>
               </div>
               Full Stack Web Development
             </v-card-item>
@@ -39,7 +39,7 @@
           <v-card>
             <v-card-item class="text-h5">
               <div class="mb-5">
-                <v-icon size="53">mdi-layers-outline</v-icon>
+                <v-icon size="53" class="i-mdi-layers-outline"></v-icon>
               </div>
               Graphic Design Skills
             </v-card-item>
@@ -61,7 +61,7 @@
           <v-card>
             <v-card-item class="text-h5">
               <div class="mb-5">
-                <v-icon size="53">mdi-license</v-icon>
+                <v-icon size="53" class="i-mdi-license">mdi-license</v-icon>
               </div>
               Computer Science
             </v-card-item>

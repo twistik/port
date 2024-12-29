@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/mdi": "^1.2.2",
     "@nuxtjs/seo": "^2.0.2",
     "@vee-validate/nuxt": "^4.14.7",
     "@vee-validate/yup": "^4.15.0",
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "@unlighthouse/nuxt": "^0.10.6",
-    "sass-embedded": "^1.83.0"
+    "@unocss/nuxt": "^0.65.3",
+    "sass-embedded": "^1.83.0",
+    "unocss": "^0.65.3"
   }
 }

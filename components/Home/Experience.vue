@@ -16,7 +16,7 @@
         class="bg-white"
         gap-40
         dot-color="deep-purple-accent-4"
-        icon="mdi-briefcase"
+        icon="i-mdi-briefcase"
         max-width="100%"
       >
         <v-card>
@@ -37,7 +37,7 @@
       <v-timeline-item
         class="bg-white"
         dot-color="deep-purple-accent-4"
-        icon="mdi-briefcase"
+        icon="i-mdi-briefcase"
         max-width="100%"
       >
         <template v-slot:opposite>
@@ -69,7 +69,7 @@
       <v-timeline-item
         class="bg-white"
         dot-color="deep-purple-accent-4"
-        icon="mdi-briefcase"
+        icon="i-mdi-briefcase"
         max-width="100%"
       >
         <template v-slot:opposite>

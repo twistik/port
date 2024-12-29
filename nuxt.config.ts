@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
+  unocss: {
+    nuxtLayers: true,
+  },
+  
   app: {
     head: {
       title: 'Personal Portfolio',
@@ -27,9 +31,12 @@ export default defineNuxtConfig({
         pass: process.env.NUXT_MAIL_PASSWORD,
       },
     },
-  }], '@nuxtjs/seo'],
+  }], '@nuxtjs/seo', '@unocss/nuxt'],
   vuetify: {
     vuetifyOptions: {
+      icons: {
+        defaultSet: 'unocss-mdi'
+      },
       theme: {
         defaultTheme: 'dark',
         themes: {
@@ -80,6 +87,7 @@ export default defineNuxtConfig({
        
     },
     moduleOptions: {
+      
       disableVuetifyStyles: true,
     },
   }
