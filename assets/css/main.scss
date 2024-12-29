@@ -1,3 +1,6 @@
+@use 'vuetify' with (
+  $color-pack: false,
+);
 a:hover{
     text-decoration: underline !important;
 }

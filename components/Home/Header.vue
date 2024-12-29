@@ -5,7 +5,7 @@
       class="d-flex"
       :class="{ 'justify-end': $vuetify.display.smAndDown }">
       <v-btn value="recent" @click="toggleTheme">
-        <v-icon>mdi-lightbulb</v-icon>
+        <v-icon class="i-mdi-lightbulb"></v-icon>
       </v-btn>
     </v-app-bar-title>
 
@@ -38,10 +38,10 @@ const display = useDisplay()
 
 const drawer = ref(false)
 const buttons = [
-  { value: 'Expertise', icon: 'mdi-atom', text: 'Expertise', action: () => goToSection('#skills') },
-  { value: 'History', icon: 'mdi-history', text: 'History', action: () => goToSection('#experience') },
-  { value: 'Projects', icon: 'mdi-briefcase', text: 'Projects', action: () => goToSection('#projects') },
-  { value: 'Contacts', icon: 'mdi-contacts', text: 'Contacts', action: () => goToSection('#contact') }
+  { value: 'Expertise', icon: 'i-mdi-atom', text: 'Expertise', action: () => goToSection('#skills') },
+  { value: 'History', icon: 'i-mdi-history', text: 'History', action: () => goToSection('#experience') },
+  { value: 'Projects', icon: 'i-mdi-briefcase', text: 'Projects', action: () => goToSection('#projects') },
+  { value: 'Contacts', icon: 'i-mdi-contacts', text: 'Contacts', action: () => goToSection('#contact') }
 ]
 
 const options = computed(() => ({

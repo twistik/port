@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   ssr: false,
   unocss: {
-    nuxtLayers: true,
+    nuxtLayers: false,
   },
   
   app: {
@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     inlineStyles: true
   },
   css: ['@/assets/css/globals.scss', '@/assets/css/main.scss'],
+  
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ogImage: { enabled: false },
@@ -86,6 +87,7 @@ export default defineNuxtConfig({
       }
        
     },
+    
     moduleOptions: {
       
       disableVuetifyStyles: true,
