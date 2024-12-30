@@ -26,7 +26,8 @@ export default defineNuxtConfig({
     },
     smtp: {
       host: process.env.NUXT_MAIL_SMPT,
-      port: 587,
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.NUXT_MAIL_USERNAME,
         pass: process.env.NUXT_MAIL_PASSWORD,

@@ -65,20 +65,18 @@ const phone = useField('phone');
 const email = useField('email');
 const body = useField('body');
 
-const toggleSendMail = handleSubmit(async (values) => {
+const toggleSendMail = handleSubmit((values) => {
   
   const mail = useMail();
-  try {
+  
     // Send mail
-    await mail.send({
+     mail.send({
       from: "A Strong Man doesn't need to",
       subject: "Portfolio site message",
       text: `\nName Sender:${JSON.stringify(values.name, null, 2)}\n\nEmail Sender:${JSON.stringify(values.email, null, 2)}\n \nPhone Sender:${JSON.stringify(values.phone, null, 2)}\n \nMessege:${JSON.stringify(values.body, null, 2)}`,
     });
 
     handleReset();
-  } catch (error) {
-    console.error('Failed to send mail:', error)
-  }
+
 });
 </script>
