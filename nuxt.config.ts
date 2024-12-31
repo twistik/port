@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
   unocss: {
     nuxtLayers: false,
   },
@@ -21,7 +20,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ogImage: { enabled: false },
-  modules: ['vuetify-nuxt-module', 'nuxt-resend', '@vee-validate/nuxt', '@nuxtjs/seo', '@unocss/nuxt'],
+  delayHydration: {
+    mode: 'init'
+  },
+  modules: ['vuetify-nuxt-module', 'nuxt-delay-hydration', 'nuxt-resend', '@vee-validate/nuxt', '@nuxtjs/seo', '@unocss/nuxt'],
   vuetify: {
     vuetifyOptions: {
       icons: {
@@ -78,7 +80,6 @@ export default defineNuxtConfig({
     },
     
     moduleOptions: {
-      
       disableVuetifyStyles: true,
     },
   }

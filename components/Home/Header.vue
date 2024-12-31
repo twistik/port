@@ -4,7 +4,7 @@
     <v-app-bar-title
       class="d-flex"
       :class="{ 'justify-end': $vuetify.display.smAndDown }">
-      <v-btn value="recent" @click="toggleTheme">
+      <v-btn value="recent" @click="toggleTheme" aria-label="Toggle theme">
         <v-icon class="i-mdi-lightbulb"></v-icon>
       </v-btn>
     </v-app-bar-title>
@@ -19,7 +19,7 @@
 
   <v-navigation-drawer v-model="drawer" temporary>
     <v-list>
-      <v-list-item v-for="button in buttons" :key="button.value" @click="button.action">
+      <v-list-item v-for="button in buttons" :key="button.value" @click="button.action" :aria-label="button.text" >
         <v-icon>{{ button.icon }}</v-icon>
         <v-list-item-title>{{ button.text }}</v-list-item-title>
       </v-list-item>
