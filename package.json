@@ -24,6 +24,7 @@
   "devDependencies": {
     "@unlighthouse/nuxt": "^0.10.6",
     "@unocss/nuxt": "^0.65.3",
+    "nuxt-resend": "^0.0.2",
     "sass-embedded": "^1.83.0",
     "unocss": "^0.65.3"
   }

@@ -18,22 +18,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ogImage: { enabled: false },
-  modules: ['vuetify-nuxt-module', '@vee-validate/nuxt', ['nuxt-mail', {
-    message: {
-      to: process.env.NUXT_MAIL_TARGET,
-      cc: process.env.NUXT_MAIL_TARGET,
-      bcc: process.env.NUXT_MAIL_TARGET,
-    },
-    smtp: {
-      host: process.env.NUXT_MAIL_SMPT,
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.NUXT_MAIL_USERNAME,
-        pass: process.env.NUXT_MAIL_PASSWORD,
-      },
-    },
-  }], '@nuxtjs/seo', '@unocss/nuxt'],
+  modules: ['vuetify-nuxt-module', 'nuxt-resend', '@vee-validate/nuxt', '@nuxtjs/seo', '@unocss/nuxt'],
   vuetify: {
     vuetifyOptions: {
       icons: {

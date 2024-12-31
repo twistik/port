@@ -65,18 +65,24 @@ const phone = useField('phone');
 const email = useField('email');
 const body = useField('body');
 
-const toggleSendMail = handleSubmit((values) => {
-  
-  const mail = useMail();
-  
-    // Send mail
-     mail.send({
-      from: "A Strong Man doesn't need to",
-      subject: "Portfolio site message",
-      text: `\nName Sender:${JSON.stringify(values.name, null, 2)}\n\nEmail Sender:${JSON.stringify(values.email, null, 2)}\n \nPhone Sender:${JSON.stringify(values.phone, null, 2)}\n \nMessege:${JSON.stringify(values.body, null, 2)}`,
+const toggleSendMail = handleSubmit(async (values) => {
+  try {
+    await $fetch('/api/send', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: values.name,
+        mail: values.email,
+        message: `${values.phone} ${values.body}`,
+      }),
     });
-
-    handleReset();
-
+    console.log('Email sent!');
+    
+    handleReset(); // Reset the form after success
+  } catch (error) {
+    console.error('Failed to send email:', error);
+  }
 });
 </script>
+
+
+
