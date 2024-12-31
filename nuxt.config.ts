@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Personal Portfolio',
+      meta: [
+        { name: 'description', content: 'My amazing Personal Portfolio site.' }
+      ],
     }
   },
   features: {

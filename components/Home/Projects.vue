@@ -6,7 +6,7 @@
     <v-row class="projects-grid">
       <v-col cols="12" md="6" v-for="project in projects" :key="project.id">
         <v-card style="overflow:visible;">
-          <nuxt-link :to="project.link">
+          <nuxt-link :to="project.link" aria-label="Link to project">
             <v-hover v-slot:default="{ isHovering }">
               <v-img
                 :aspect-ratio="16/9"
@@ -14,6 +14,7 @@
                 cover
                 :class="{ 'on-hover': isHovering }"
                 style="margin: 0.625rem 1rem;"
+                alt="Project Image"
               ></v-img>
             </v-hover>
           </nuxt-link>

@@ -8,20 +8,24 @@
     </v-row>
     <v-form @submit.prevent="toggleSendMail" class="ml-4 mr-4">
       <v-row>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" class="mobile-contact-utils-pb">
           <v-text-field
             v-model="name.value.value"
             :counter="10"
             :error-messages="name.errorMessage.value"
             label="Name"
+            name="Name"
+            id="Name"
           ></v-text-field>
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" class="mobile-contact-utils-pt">
           <v-text-field
             v-model="phone.value.value"
             :counter="7"
             :error-messages="phone.errorMessage.value"
             label="Phone Number"
+            name="Phone Number"
+            id="Phone Number"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -29,11 +33,15 @@
         v-model="email.value.value"
         :error-messages="email.errorMessage.value"
         label="E-mail"
+        name="E-mail"
+        id="E-mail"
       ></v-text-field>
       <v-textarea
         v-model="body.value.value"
         :error-messages="body.errorMessage.value"
         label="Message"
+        name="Message"
+        id="Message"
       ></v-textarea>
       <v-btn class="me-4" type="submit">
         Submit

@@ -10,7 +10,7 @@
     </v-app-bar-title>
 
   <template v-if="$vuetify.display.mdAndUp">
-    <v-btn v-for="button in buttons" :key="button.value" :value="button.value" @click="button.action">
+    <v-btn v-for="button in buttons" :key="button.value" :value="button.value" @click="button.action" :aria-label="button.text">
       <v-icon>{{ button.icon }}</v-icon>
       <span class="text-h6">{{ button.text }}</span>
     </v-btn>
@@ -34,7 +34,6 @@ import { useGoTo } from 'vuetify'
 
 const theme = useTheme()
 const goTo = useGoTo()
-const display = useDisplay()
 
 const drawer = ref(false)
 const buttons = [
