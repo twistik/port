@@ -8,6 +8,8 @@
               <div>
                 <v-icon size="x-large" class="i-mdi:github"></v-icon>
                 <v-icon size="x-large" class="i-mdi:linkedin"></v-icon>
+                <h1 class="text-h1 font-weight-thin">Vladyslav Novak</h1>
+                <h2 class="text-h5">Frontend Engineer</h2>
               </div>
             </div>
           </v-row>

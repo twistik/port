@@ -1,6 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true,
+  hooks:{
+    "prerender:routes"({ routes }){
+      routes.clear()
+    }
+  },
+  router: {
+    options:{
+      hashMode: true
+    }
+  },
+  ssr: false,
   unocss: {
     nuxtLayers: false,
   },
@@ -20,10 +30,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ogImage: { enabled: false },
-  delayHydration: {
-    mode: 'init'
-  },
-  modules: ['vuetify-nuxt-module', 'nuxt-delay-hydration', 'nuxt-resend', '@vee-validate/nuxt', '@nuxtjs/seo', '@unocss/nuxt'],
+  modules: ['vuetify-nuxt-module', 'nuxt-resend', '@vee-validate/nuxt', '@nuxtjs/seo', '@unocss/nuxt'],
   vuetify: {
     vuetifyOptions: {
       icons: {
