@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   unocss: {
     nuxtLayers: false,
   },
@@ -16,9 +17,6 @@ export default defineNuxtConfig({
     inlineStyles: true
   },
   css: ['@/assets/css/globals.scss', '@/assets/css/main.scss'],
-  routeRules: {
-    "/index": {ssr: false}
-  },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ogImage: { enabled: false },
