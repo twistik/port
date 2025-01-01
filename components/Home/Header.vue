@@ -1,6 +1,6 @@
 <template>
   <v-app-bar :elevation="5">
-    <v-app-bar-nav-icon variant="text" @click="toggleDrawer" v-if="$vuetify.display.smAndDown"></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon variant="text" @click="toggleDrawer" v-if="$vuetify.display.smAndDown" aria-label="Toggle menu"></v-app-bar-nav-icon>
     <v-app-bar-title
       class="d-flex"
       :class="{ 'justify-end': $vuetify.display.smAndDown }">
@@ -18,7 +18,7 @@
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" temporary>
-    <v-list>
+    <v-list aria-label="mobile menu">
       <v-list-item v-for="button in buttons" :key="button.value" @click="button.action" :aria-label="button.text" >
         <v-icon>{{ button.icon }}</v-icon>
         <v-list-item-title>{{ button.text }}</v-list-item-title>
