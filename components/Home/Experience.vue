@@ -21,11 +21,11 @@
       >
         <v-card>
           <v-card-item class="text-h5 bg-white font-weight-bold pt-6">
-            <p>Frontend Development</p>
+            <p>Front End Developer</p>
             <p class="text-h6 font-weight-bold">Kyiv, UKR</p>
           </v-card-item>
           <v-card-text class="bg-white text--primary pb-6">
-            <p class="text-body-1">Frontend Development, API Development</p>
+            <p class="text-body-1">Frontend Development, REST API, Vanilla js</p>
             <p class="d-lg-none text-oposite pt-3">2023 - 2024</p>
           </v-card-text>
         </v-card>
@@ -43,25 +43,25 @@
         <template v-slot:opposite>
           <v-card class="d-lg-none">
             <v-card-item class="text-h5 bg-white font-weight-bold pt-6">
-              <p>Frontend Development</p>
+              <p>Front End Developer Vue</p>
               <p class="text-h6 font-weight-bold">Kyiv, UKR</p>
             </v-card-item>
             <v-card-text class="bg-white text--primary pb-6">
-              <p class="text-body-1">Frontend Development, API Development</p>
-              <p class="d-lg-none text-oposite pt-3">2023 - 2024</p>
+              <p class="text-body-1">Frontend Development, Vue, CSS3, HTML5</p>
+              <p class="d-lg-none text-oposite pt-3">2021 - 2023</p>
             </v-card-text>
           </v-card>
           <p class="d-none d-lg-block text-oposite">2021 - 2023</p>
         </template>
         <v-card class="d-none d-lg-block">
           <v-card-item class="text-h5 bg-white font-weight-bold">
-            Frontend Development
+            <p>Front End Developer Vue</p>
           </v-card-item>
           <v-card-text class="bg-white text-h6 font-weight-bold text--primary opacity-1">
             <p>Kyiv, UKR</p>
           </v-card-text>
           <v-card-text class="bg-white text--primary">
-            <p class="text-body-1">Frontend Development, API Development</p>
+            <p class="text-body-1">Frontend Development, Vue, CSS3, HTML5</p>
           </v-card-text>
         </v-card>
       </v-timeline-item>
@@ -77,12 +77,12 @@
         </template>
         <v-card>
           <v-card-item class="text-h5 bg-white font-weight-bold pt-6">
-            <p>Frontend Development</p>
+            <p>Front End Developer Intern</p>
             <p class="text-h6 font-weight-bold">Kyiv, UKR</p>
           </v-card-item>
           <v-card-text class="bg-white text--primary pb-6">
-            <p class="text-body-1">Frontend Development, API Development</p>
-            <p class="d-lg-none text-oposite pt-3">2023 - 2024</p>
+            <p class="text-body-1">Frontend Development, learned and use  best web practices on real work from senior developers</p>
+            <p class="d-lg-none text-oposite pt-3">2021 - 2021</p>
           </v-card-text>
         </v-card>
       </v-timeline-item>

@@ -43,7 +43,7 @@ const projects = ref([
   {
     id: 1,
     title: 'Project 1',
-    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    description: 'Developed demo E-Commerce App from scratch with Features: Product Listing, Product Details, Shopping Cart, Checkout Category, Filtering, Search Functionality, Routing, State Management, UI Framework using Vue.js, Pinia, Vue Routing, Vuetify, REST API (fake-store-api), Javascript, etc.',
     image: project_1,
     link: 'https://sage-starship-f483c5.netlify.app/',
     git: 'https://github.com/twistik/ecom'
@@ -51,7 +51,7 @@ const projects = ref([
   {
     id: 2,
     title: 'Project 2',
-    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    description: 'Designed and developed a beautiful static site with multipage features: Each page serves a distinct purpose and is accessible via its own URL, Fast Loading Times, SEO-Friendly, Security, Scalability, etc. ',
     image: project_2,
     link: 'https://sparkling-arithmetic-880c4e.netlify.app/',
     git: 'https://github.com/twistik/jekyll-azure-static'
@@ -59,7 +59,7 @@ const projects = ref([
   {
     id: 3,
     title: 'Project 3',
-    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    description: 'Responsive Landing Page, just clean HTML CSS and JS.',
     image: project_3,
     link: 'https://stellar-sprinkles-59afea.netlify.app/',
     git: 'https://stellar-sprinkles-59afea.netlify.app/'
@@ -67,7 +67,7 @@ const projects = ref([
   {
     id: 4,
     title: 'Project 4',
-    description: 'I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.',
+    description: 'This is an HTML email example, Im creating tons of emails like this, it is best email practice, fully tested, and easily can be integrated to service Salesforce, Veeva Vault, Mailchimp, etc.',
     image: project_4,
     link: 'https://melodic-moonbeam-87a240.netlify.app/',
     git: 'https://github.com/twistik/emails'

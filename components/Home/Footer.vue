@@ -9,7 +9,7 @@
                 <v-icon size="x-large" class="i-mdi:linkedin bg-link-color"></v-icon></nuxt-link>
         </v-col>
         <v-col cols="12" md="12" class="text-center mt-4">          
-              <p>A portfolio built by Vladylav Novak with 💜</p>
+              <p>A portfolio built by Vladyslav Novak with 💜</p>
         </v-col>
         <v-col cols="12" md="12" class="text-center mt-4">          
                <p>Design Yugi Sato</p>

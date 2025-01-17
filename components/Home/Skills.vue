@@ -11,10 +11,10 @@
               <div class="mb-5">
                 <v-icon size="53" class="i-mdi-vuejs"></v-icon>
               </div>
-              Full Stack Web Development
+              Front end Web Development
             </v-card-item>
             <v-card-text class="text-h6">
-              I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.
+              I have built a diverse array of web applications from scratch using modern technologies such as Vue and Nuxt, building tons of web user interfaces. I have a strong proficiency in the SDLC process and frontend development.
             </v-card-text>
             <v-card-text>
               <v-chip-group column variant="flat">
@@ -44,7 +44,7 @@
               Graphic Design Skills
             </v-card-item>
             <v-card-text class="text-h6">
-              I am a developer, not a designer, but I have strong knowledge for working with layouts
+              I am a developer, not a designer, but I have strong knowledge for working with layouts. I have a good understanding of the principles of design and how to apply them to web development.
             </v-card-text>
             <v-card-text>
               <v-chip-group column variant="flat">
