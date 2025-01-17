@@ -6,8 +6,10 @@
           <v-row>
             <div class="d-flex flex-column justify-start align-start">
               <div>
-                <v-icon size="x-large" class="i-mdi:github"></v-icon>
-                <v-icon size="x-large" class="i-mdi:linkedin"></v-icon>
+                <nuxt-link aria-label="Link to github" to="https://github.com/twistik" target="_blank" >
+                <v-icon size="x-large" class="i-mdi:github bg-link-color"></v-icon></nuxt-link>
+                <nuxt-link aria-label="Link to linkedin" to="https://www.linkedin.com/in/vladyslav-novak-6782ab180/" target="_blank">
+                <v-icon size="x-large" class="i-mdi:linkedin bg-link-color"></v-icon></nuxt-link>
                 <h1 class="text-h1 font-weight-thin">Vladyslav Novak</h1>
                 <h2 class="text-h5">Frontend Engineer</h2>
               </div>

@@ -43,6 +43,7 @@ export default defineNuxtConfig({
             colors: {
               background: '#0d1116',
     surface: '#0d1116',
+    'link-color': "#FFFFFF",
     'surface-bright': '#0d1116',
     'surface-light': '#FFFFFF',
     'surface-variant': '#0A0E12',
@@ -61,6 +62,7 @@ export default defineNuxtConfig({
           },
           myCustomTheme: {
             colors: {
+              'link-color': "#0d1116",
               'divider-timeline': '#E4E4E6',
               'surface-light': '#FFFFFF',
               'on-surface-light': '#0000',
