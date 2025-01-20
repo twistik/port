@@ -1,3 +1,12 @@
+# Portfolio
+
+### [Live Site](https://vlad-nn.netlify.app/)
+
+![Portfolio Aplication](https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/678e8df4a74ae90008166a40/screenshot_2025-01-20-17-56-14-0000.webp&fit=cover&h=500&q=40&w=800)
+
+## Introduction
+Nuxt and Vuetify portfolio
+
 ## Setup
 
 Make sure to install dependencies:
