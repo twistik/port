@@ -1,14 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
-  hooks:{
-    "prerender:routes"({ routes }){
-      routes.clear()
-    }
-  },
-  router: {
-    options:{
-      hashMode: true
-    }
+export default defineNuxtConfig(
+  {
+  future: {
+    compatibilityVersion: 4,
   },
   ssr: false,
   unocss: {
@@ -26,11 +20,22 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: true
   },
-  css: ['@/assets/css/globals.scss', '@/assets/css/main.scss'],
+  css: ['~/assets/css/globals.scss', '~/assets/css/main.scss'],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ogImage: { enabled: false },
-  modules: ['vuetify-nuxt-module', 'nuxt-resend', '@vee-validate/nuxt', '@nuxtjs/seo', '@unocss/nuxt'],
+  image: {
+    presets: {
+      cover: {
+        modifiers: {
+          fit: 'cover',
+          format: 'png',
+          quality: 100,
+        },
+      },
+    },
+  },
+  modules: ['vuetify-nuxt-module', 'nuxt-resend', '@vee-validate/nuxt', '@nuxtjs/seo', '@unocss/nuxt', '@nuxt/image'],
   vuetify: {
     vuetifyOptions: {
       icons: {

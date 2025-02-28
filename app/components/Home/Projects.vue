@@ -8,14 +8,10 @@
         <v-card style="overflow:visible;">
           <nuxt-link :to="project.link" aria-label="Link to project" target="_blank">
             <v-hover v-slot:default="{ isHovering }">
-              <v-img
-                :aspect-ratio="16/9"
-                :src="project.image"
-                cover
-                :class="{ 'on-hover': isHovering }"
-                style="margin: 0.625rem 1rem;"
-                alt="Project Image"
-              ></v-img>
+              <div class="v-responsive v-img--booting v-img" style="margin: 0.625rem 1rem;">
+                <div class="v-responsive__sizer" style="padding-bottom: 56.25%;"></div>
+                <NuxtImg placeholder class="v-img__img" preset="cover" :src="project.image" alt="Project Image" :class="{ 'on-hover': isHovering }" loading="lazy"></NuxtImg>
+              </div>
             </v-hover>
           </nuxt-link>
           <v-card-title class="text-h5 font-weight-bold mt-4 mb-4">
@@ -34,10 +30,10 @@
 
 <script setup>
 import { ref } from 'vue'
-import project_2 from '@/assets/img/fastrace.png'
-import project_1 from '@/assets/img/ecom.png'
-import project_3 from '@/assets/img/crypto.png'
-import project_4 from '@/assets/img/emails.png'
+import project_2 from '/fastrace.png'
+import project_1 from '/ecom.png'
+import project_3 from '/crypto.png'
+import project_4 from '/emails.png'
 
 const projects = ref([
   {
