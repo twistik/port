@@ -1,5 +1,6 @@
 $font-stack: 'Lato', sans-serif !default;
+
 @use 'vuetify' with (
-    // Global Vuetify SASS variable overrides.  For example:
-    $body-font-family: $font-stack,
-)
+  $body-font-family: $font-stack,
+  $color-pack: false,
+);

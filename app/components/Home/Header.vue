@@ -1,64 +1,94 @@
 <template>
-  <v-app-bar :elevation="5">
-    <v-app-bar-nav-icon variant="text" @click="toggleDrawer" v-if="$vuetify.display.smAndDown" aria-label="Toggle menu"></v-app-bar-nav-icon>
+  <v-app-bar :elevation="5" class="app-bar-themed">
+    <v-app-bar-nav-icon
+      v-if="display.smAndDown.value"
+      variant="text"
+      aria-label="Toggle menu"
+      @click="toggleDrawer"
+    />
     <v-app-bar-title
       class="d-flex"
-      :class="{ 'justify-end': $vuetify.display.smAndDown }">
-      <v-btn value="recent" @click="toggleTheme" aria-label="Toggle theme">
-        <v-icon class="i-mdi-lightbulb"></v-icon>
+      :class="{ 'justify-end': display.smAndDown.value }"
+    >
+      <v-btn
+        class="theme-toggle-btn"
+        :class="{ 'theme-toggle-btn--animating': isAnimating }"
+        value="recent"
+        aria-label="Toggle theme"
+        :disabled="isAnimating"
+        @click="toggleTheme"
+      >
+        <v-icon
+          :icon="isDark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'"
+          class="theme-toggle-icon"
+        />
       </v-btn>
     </v-app-bar-title>
 
-  <template v-if="$vuetify.display.mdAndUp">
-    <v-btn v-for="button in buttons" :key="button.value" :value="button.value" @click="button.action" :aria-label="button.text">
-      <v-icon>{{ button.icon }}</v-icon>
-      <span class="text-h6">{{ button.text }}</span>
-    </v-btn>
-  </template>
+    <template v-if="display.mdAndUp.value">
+      <v-btn
+        v-for="button in buttons"
+        :key="button.value"
+        :value="button.value"
+        :aria-label="button.text"
+        :prepend-icon="button.icon"
+        @click="button.action"
+      >
+        <span class="text-h6">{{ button.text }}</span>
+      </v-btn>
+    </template>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" temporary>
     <v-list aria-label="mobile menu">
-      <v-list-item v-for="button in buttons" :key="button.value" @click="button.action" :aria-label="button.text" >
-        <v-icon>{{ button.icon }}</v-icon>
+      <v-list-item
+        v-for="button in buttons"
+        :key="button.value"
+        :aria-label="button.text"
+        :prepend-icon="button.icon"
+        @click="button.action"
+      >
         <v-list-item-title>{{ button.text }}</v-list-item-title>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue'
-import { useTheme, useDisplay } from 'vuetify'
-import { useGoTo } from 'vuetify'
+<script setup lang="ts">
+import { useDisplay, useGoTo } from 'vuetify'
 
-const theme = useTheme()
+interface NavButton {
+  value: string
+  icon: string
+  text: string
+  action: () => void
+}
+
 const goTo = useGoTo()
+const display = useDisplay()
+const { isDark, isAnimating, toggleTheme } = useThemeTransition()
 
 const drawer = ref(false)
-const buttons = [
-  { value: 'Expertise', icon: 'i-mdi-atom', text: 'Expertise', action: () => goToSection('#skills') },
-  { value: 'History', icon: 'i-mdi-history', text: 'History', action: () => goToSection('#experience') },
-  { value: 'Projects', icon: 'i-mdi-briefcase', text: 'Projects', action: () => goToSection('#projects') },
-  { value: 'Contacts', icon: 'i-mdi-contacts', text: 'Contacts', action: () => goToSection('#contact') }
-]
 
-const options = computed(() => ({
-  duration: 300,
+const scrollOptions = {
+  duration: 450,
   easing: 'easeInOutCubic',
   offset: -50,
-}))
+} as const
 
-const toggleTheme = () => {
-  theme.global.name.value = theme.global.current.value.dark ? 'myCustomTheme' : 'dark'
+const goToSection = (section: string) => {
+  goTo(section, scrollOptions)
+  drawer.value = false
 }
+
+const buttons: NavButton[] = [
+  { value: 'Expertise', icon: 'mdi-atom', text: 'Expertise', action: () => goToSection('#skills') },
+  { value: 'History', icon: 'mdi-history', text: 'History', action: () => goToSection('#experience') },
+  { value: 'Projects', icon: 'mdi-briefcase', text: 'Projects', action: () => goToSection('#projects') },
+  { value: 'Contacts', icon: 'mdi-contacts', text: 'Contacts', action: () => goToSection('#contact') },
+]
 
 const toggleDrawer = () => {
   drawer.value = !drawer.value
-}
-
-const goToSection = (section) => {
-  goTo(section, options.value)
-  drawer.value = false
 }
 </script>

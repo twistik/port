@@ -1,91 +1,72 @@
 <template>
-  <v-container class="skills-p mt-10" id="experience">
-    <v-row>
-      <h1 class="text-h4 mx-6 mb-10 mt-10 font-weight-bold">Career History</h1>
-    </v-row>
-    <v-timeline
-      align="center"
-      line-thickness="4"
-      line-color="divider-timeline"
-      min-height="900"
-      style="height: 800px;"
-      class="ml-3 mr-3"
-      :class="{ 'justify-lg-start': $vuetify.display.smAndDown }"
-    >
-      <v-timeline-item
-        class="bg-white"
-        gap-40
-        dot-color="deep-purple-accent-4"
-        icon="i-mdi-briefcase"
-        max-width="100%"
-      >
-        <v-card>
-          <v-card-item class="text-h5 bg-white font-weight-bold pt-6">
-            <p>Front End Developer</p>
-            <p class="text-h6 font-weight-bold">Kyiv, UKR</p>
-          </v-card-item>
-          <v-card-text class="bg-white text--primary pb-6">
-            <p class="text-body-1">Frontend Development, REST API, Vanilla js</p>
-            <p class="d-lg-none text-oposite pt-3">2023 - 2024</p>
-          </v-card-text>
-        </v-card>
-        <template v-slot:opposite>
-          <p class="text-oposite d-none d-lg-block pt-3">2023 - 2024</p>
-        </template>
-      </v-timeline-item>
+  <section
+    id="experience"
+    ref="el"
+    class="experience-section reveal-section"
+    :class="{ 'is-visible': isVisible }"
+  >
+    <v-container class="skills-p mt-10">
+      <v-row>
+        <div class="experience-heading mx-6 mb-10 mt-10">
+          <h1 class="text-h4 font-weight-bold mb-0">Career History</h1>
+        </div>
+      </v-row>
 
-      <v-timeline-item
-        class="bg-white"
-        dot-color="deep-purple-accent-4"
-        icon="i-mdi-briefcase"
-        max-width="100%"
+      <v-timeline
+        align="center"
+        justify="center"
+        line-thickness="2"
+        line-color="divider-timeline"
+        class="experience-timeline"
       >
-        <template v-slot:opposite>
-          <v-card class="d-lg-none">
-            <v-card-item class="text-h5 bg-white font-weight-bold pt-6">
-              <p>Front End Developer Vue</p>
-              <p class="text-h6 font-weight-bold">Kyiv, UKR</p>
+        <v-timeline-item
+          v-for="(item, index) in experienceItems"
+          :key="item.title + item.period"
+          size="default"
+          fill-dot
+          dot-color="timeline-dot"
+          icon="mdi-briefcase"
+          icon-color="on-timeline-dot"
+          class="experience-item"
+          :style="{ '--item-index': index }"
+        >
+          <template #opposite>
+            <div class="experience-date-wrap d-none d-lg-flex">
+              <span class="experience-date text-opposite">{{ item.period }}</span>
+            </div>
+          </template>
+
+          <v-card class="experience-card" elevation="0" rounded="0">
+            <div class="experience-card__accent" aria-hidden="true" />
+            <v-card-item class="experience-card__header">
+              <v-card-title class="experience-card__title pa-0">
+                {{ item.title }}
+              </v-card-title>
+              <v-card-subtitle class="experience-card__location pa-0 mt-2">
+                <v-icon icon="mdi-map-marker-outline" size="small" class="me-1" />
+                {{ item.location }}
+              </v-card-subtitle>
             </v-card-item>
-            <v-card-text class="bg-white text--primary pb-6">
-              <p class="text-body-1">Frontend Development, Vue, CSS3, HTML5</p>
-              <p class="d-lg-none text-oposite pt-3">2021 - 2023</p>
+            <v-card-text class="experience-card__body">
+              <p class="experience-card__description mb-4">{{ item.description }}</p>
+              <div class="experience-card__tags">
+                <span
+                  v-for="tag in item.tags"
+                  :key="tag"
+                  class="experience-tag"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+              <p class="experience-date d-lg-none mt-4 mb-0">{{ item.period }}</p>
             </v-card-text>
           </v-card>
-          <p class="d-none d-lg-block text-oposite">2021 - 2023</p>
-        </template>
-        <v-card class="d-none d-lg-block">
-          <v-card-item class="text-h5 bg-white font-weight-bold">
-            <p>Front End Developer Vue</p>
-          </v-card-item>
-          <v-card-text class="bg-white text-h6 font-weight-bold text--primary opacity-1">
-            <p>Kyiv, UKR</p>
-          </v-card-text>
-          <v-card-text class="bg-white text--primary">
-            <p class="text-body-1">Frontend Development, Vue, CSS3, HTML5</p>
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
-
-      <v-timeline-item
-        class="bg-white"
-        dot-color="deep-purple-accent-4"
-        icon="i-mdi-briefcase"
-        max-width="100%"
-      >
-        <template v-slot:opposite>
-          <p class="d-none d-lg-block text-oposite pt-3">2021 - 2021</p>
-        </template>
-        <v-card>
-          <v-card-item class="text-h5 bg-white font-weight-bold pt-6">
-            <p>Front End Developer Intern</p>
-            <p class="text-h6 font-weight-bold">Kyiv, UKR</p>
-          </v-card-item>
-          <v-card-text class="bg-white text--primary pb-6">
-            <p class="text-body-1">Frontend Development, learned and use  best web practices on real work from senior developers</p>
-            <p class="d-lg-none text-oposite pt-3">2021 - 2021</p>
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
-    </v-timeline>
-  </v-container>
+        </v-timeline-item>
+      </v-timeline>
+    </v-container>
+  </section>
 </template>
+
+<script setup lang="ts">
+const { el, isVisible } = useRevealOnScroll({ threshold: 0.08 })
+</script>
