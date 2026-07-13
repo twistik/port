@@ -7,6 +7,31 @@
 ## Introduction
 Nuxt and Vuetify portfolio
 
+## Requirements
+
+- **Node.js** `^20.19.0` or `>=22.12.0` (you currently need this to clear `EBADENGINE` warnings)
+- **npm** `>=10.8.0`
+
+This repo includes an `.nvmrc` pinned to `20.19.5`.
+
+### Upgrade with nvm-windows (recommended)
+
+Open an **Administrator** terminal, then:
+
+```bash
+nvm install 20.19.5
+nvm use 20.19.5
+node -v
+```
+
+Then reinstall deps in the project folder:
+
+```bash
+rmdir /s /q node_modules
+del package-lock.json
+npm install
+```
+
 ## Setup
 
 Make sure to install dependencies:
